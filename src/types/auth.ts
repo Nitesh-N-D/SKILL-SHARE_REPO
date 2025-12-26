@@ -1,4 +1,6 @@
-export type SkillLevel = 'Beginner'|'Intermediate'|'Advacned'|'Expert'
+import { Timestamp } from "firebase/firestore";
+
+export type SkillLevel = 'beginner'|'intermediate'|'advacned'|'Expert'
 
 export interface UserProfile{
     uid : string;
@@ -10,6 +12,25 @@ export interface UserProfile{
     createdAt : string;
     lastUpdated : string;
 }
+export interface skillRequests{
+  fromUserId: string,   // sender
+  toUserId: string,     // receiver
+  status: "pending" | "accepted" | "rejected",
+  createdAt: Timestamp
+}
+
+export interface notifications
+{
+  userId: string,          // receiver
+  type: "connection",
+  title: string,
+  message: string,
+  requestId: string,      // reference to skillRequest
+  fromUserId: string,
+  read: boolean,
+  createdAt: Timestamp
+}
+
 
 export interface User{
   uid: string;

@@ -172,33 +172,57 @@ function DashboardHome() {
     streak: 5,
   });
 
-  useEffect(() => {
-    async function loadStats() {
-      const [usersSnap, skillsSnap, questionsSnap] = await Promise.all([
-        getDocs(usersRef),
-        getDocs(skillRequestsRef),
-        getDocs(questionsRef),
-      ]);
+useEffect(() => {
+  if (!user) return;
 
-      // ✅ Count answers from subcollections
-      let totalAnswers = 0;
-      for (const q of questionsSnap.docs) {
-        const answersSnap = await getDocs(
-          collection(db, "questions", q.id, "answers")
-        );
-        totalAnswers += answersSnap.size;
-      }
+  async function loadStats() {
+    /* ---------- FETCH DATA ---------- */
+    const [usersSnap, requestsSnap, questionsSnap] = await Promise.all([
+      getDocs(usersRef),
+      getDocs(skillRequestsRef),
+      getDocs(questionsRef),
+    ]);
 
-      setStats({
-        peers: usersSnap.size,
-        answered: totalAnswers,
-        sessions: skillsSnap.size,
-        streak: 5,
+    /* ---------- ANSWERS BY USER ---------- */
+    let answersByUser = 0;
+
+    for (const q of questionsSnap.docs) {
+      const answersSnap = await getDocs(
+        collection(db, "questions", q.id, "answers")
+      );
+
+      answersSnap.forEach((a) => {
+        if (a.data().userId === user.uid) {
+          answersByUser++;
+        }
       });
     }
 
-    loadStats();
-  }, []);
+    /* ---------- QUESTIONS ASKED BY USER ---------- */
+    const questionsAsked = questionsSnap.docs.filter(
+      (q) => q.data().userId === user.uid
+    ).length;
+
+    /* ---------- CONNECTION COUNT ---------- */
+    const connections = requestsSnap.docs.filter(
+      (r) =>
+        r.data().fromUserId === user.uid &&
+        (r.data().status === "accepted" ||
+         r.data().status === "pending")
+    ).length;
+
+    /* ---------- SET STATS ---------- */
+    setStats({
+      peers: usersSnap.size,
+      answered: answersByUser,
+      sessions: questionsAsked,
+      streak: connections,
+    });
+  }
+
+  loadStats();
+}, [user]);
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -219,9 +243,9 @@ function DashboardHome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[
             { label: "Active Peers", value: stats.peers },
-            { label: "Answers", value: stats.answered },
-            { label: "Sessions", value: stats.sessions },
-            { label: "Streak", value: `${stats.streak} days` },
+            { label: "Answers Given", value: stats.answered },
+            { label: "Questions Asked", value: stats.sessions },
+            { label: "Connections", value: stats.streak },
           ].map((stat) => (
             <div
               key={stat.label}
