@@ -13,11 +13,25 @@ export interface UserProfile{
     lastUpdated : string;
 }
 export interface skillRequests{
+  id: string,
   fromUserId: string,   // sender
   toUserId: string,     // receiver
   status: "pending" | "accepted" | "rejected",
   createdAt: Timestamp
 }
+export interface chats {
+  id: string
+  participants: string[]   // [userA, userB]
+  lastMessage: string
+  updatedAt: Timestamp
+}
+
+export interface messages {
+  senderId: string
+  text: string
+  createdAt: Timestamp
+}
+
 
 export interface notifications
 {

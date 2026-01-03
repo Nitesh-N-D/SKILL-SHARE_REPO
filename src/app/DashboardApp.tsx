@@ -138,6 +138,11 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Toaster } from "./components/ui/sonner";
 
+import { ConnectionsPage } from "./components/ConnectionRequestPage";
+import ChatListPage from "./components/ChatListPage";
+import { ChatPage } from "./components/ChatPage";
+
+
 import { PageLayout } from "./components/PageLayout";
 import { DashboardCard } from "./components/DashboardCard";
 import { SuggestedPeers } from "./components/SuggestedPeers";
@@ -284,8 +289,12 @@ export default function DashboardApp() {
       <PageLayout>
         <Routes>
           <Route index element={<DashboardHome />} />
-          <Route path="skillmatch" element={<SkillMatchPage />} />
           <Route path="helpdesk/*" element={<HelpdeskRoutes />} />
+          <Route path="skillmatch" element={<SkillMatchPage />} />
+          <Route path="connections" element={<ConnectionsPage />} />   {/* ✅ */}
+          <Route path="chats" element={<ChatListPage />} />             {/* ✅ */}
+          <Route path="chats/:chatId" element={<ChatPage />} /> 
+          
           <Route path="profile" element={<ProfilePage />} />
           <Route path="settings" element={<SettingsPage />} />
         </Routes>
