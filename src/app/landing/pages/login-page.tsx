@@ -64,7 +64,7 @@ export function LoginPage({ onBack }: LoginPageProps): JSX.Element {
           <div className="text-center mb-8">
             <Lock className="mx-auto mb-3 text-purple-600" />
             <h1 className="text-3xl font-bold">Sign In</h1>
-            <p className="text-gray-500">Choose how you want to continue</p>
+            <p className="text-gray-500">Choose how do you want to continue</p>
           </div>
 
           {error && (
