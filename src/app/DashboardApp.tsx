@@ -171,10 +171,10 @@ function DashboardHome() {
     hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
 
   const [stats, setStats] = useState({
-    peers: 0,
+    peers: 18,
     answered: 0,
     sessions: 0,
-    streak: 5,
+    streak: 0,
   });
 
 useEffect(() => {

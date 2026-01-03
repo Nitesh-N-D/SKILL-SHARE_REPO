@@ -50,7 +50,7 @@ export function Navbar({ onLoginClick }: NavbarProps) {
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <span className="text-lg font-bold text-gray-900">
-              StudentHub
+              SkillShare
             </span>
           </motion.div>
 
