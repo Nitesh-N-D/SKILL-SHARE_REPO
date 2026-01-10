@@ -116,7 +116,7 @@ export function AskQuestionCard({
             </p>
 
             <div className="mt-3 text-xs text-muted-foreground">
-              248 active contributors available
+              Contributors available
             </div>
           </div>
 

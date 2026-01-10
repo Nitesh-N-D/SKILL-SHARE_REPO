@@ -13,12 +13,17 @@ export interface UserProfile{
     lastUpdated : string;
 }
 export interface skillRequests{
-  id: string,
-  fromUserId: string,   // sender
-  toUserId: string,     // receiver
-  status: "pending" | "accepted" | "rejected",
-  createdAt: Timestamp
+  id: string;
+
+  fromUserId: string;
+  fromUserName: string;
+  fromUserPhoto?: string;
+  fromUserSkills?: string[];
+
+  toUserId: string;
+  status: "pending" | "accepted" | "rejected";
 }
+
 export interface chats {
   id: string
   participants: string[]   // [userA, userB]
