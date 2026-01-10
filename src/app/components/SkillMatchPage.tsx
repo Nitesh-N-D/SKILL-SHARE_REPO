@@ -153,6 +153,9 @@
 //     </div>
 //   );
 // }
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../lib/firestore";
+
 import { JSX, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Target, Sparkles } from "lucide-react";
@@ -180,10 +183,28 @@ export function SkillMatchPage(): JSX.Element {
   }, [user, findMatches]);
 
   /* ---------------- CONNECT ---------------- */
-  const handleConnect = (peerId: string) => {
-    // later: Firestore addDoc(skillRequests)
+const handleConnect = async (peerId: string) => {
+  if (!user) return;
+
+  try {
+    await addDoc(collection(db, "skillRequests"), {
+      fromUserId: user.uid,
+      fromUserName: user.displayName ?? "Anonymous",
+      fromUserPhoto: user.photoURL ?? "",
+      fromUserSkills: user.interests ?? [], // if you store skills on user
+      toUserId: peerId,
+      status: "pending",
+      createdAt: serverTimestamp(),
+    });
+
     toast.success("Connection request sent");
-  };
+  } catch (err) {
+    console.error(err);
+    toast.error("Failed to send request");
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">

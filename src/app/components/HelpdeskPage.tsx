@@ -11,6 +11,7 @@ import {
   Flame,
   Sparkles,
 } from "lucide-react";
+import { timeAgo } from "../../lib/time";
 
 import { createQuestion, getQuestions } from "../lib/firestore";
 import { useAuth } from "../../hooks/useAuth";
@@ -53,21 +54,23 @@ export function HelpdeskPage(): JSX.Element {
 
   const data = await getQuestions();
 
-  const normalized = (data as any[]).map((q) => ({
-    id: q.id,
-    title: q.title,
-    content: q.content ?? "",
-    tags: q.tags ?? [],
-    userId: q.userId,
-    userName: q.userName ?? "Guest",
-    createdAt: q.createdAt,
-    upvotes: q.upvotes ?? 0,
-    views: q.views ?? 0,
-    timeAgo: "just now",
-    author: {
-      name: q.userName ?? "Guest",
-    },
-  }));
+const normalized = (data as any[]).map((q) => ({
+  id: q.id,
+  title: q.title,
+  content: q.content ?? "",
+  tags: q.tags ?? [],
+  userId: q.userId,
+  userName: q.userName ?? "Guest",
+  createdAt: q.createdAt,
+  upvotes: q.upvotes ?? 0,
+  views: q.views ?? 0,
+  repliesCount: q.repliesCount ?? 0,   // ✅ FIX
+  timeAgo: timeAgo(q.createdAt),
+  author: {
+    name: q.userName ?? "Guest",
+  },
+}));
+
 
   setQuestions(normalized);
   setLoading(false);

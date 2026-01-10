@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { upvoteQuestion } from "../lib/firestore";
 
 /* ---------------- COMPONENT ---------------- */
 
@@ -25,12 +26,15 @@ export function QuestionCard({ question, delay = 0 }) {
   );
 
   /* ---------------- HANDLERS ---------------- */
+const handleUpvote = async (e) => {
+  e.stopPropagation();
 
-  const handleUpvote = (e) => {
-    e.stopPropagation();
-    setUpvotes((v) => (hasUpvoted ? v - 1 : v + 1));
-    setHasUpvoted(!hasUpvoted);
-  };
+  if (!hasUpvoted) {
+    await upvoteQuestion(question.id);
+    setUpvotes(v => v + 1);
+    setHasUpvoted(true);
+  }
+};
 
   const handleBookmark = (e) => {
     e.stopPropagation();

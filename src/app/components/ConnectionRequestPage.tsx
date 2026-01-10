@@ -169,12 +169,18 @@ import { motion } from "motion/react";
 
 /* ---------------- TYPES ---------------- */
 
-interface SkillRequest {
+export interface SkillRequest {
   id: string;
+
   fromUserId: string;
+  fromUserName: string;
+  fromUserPhoto?: string;
+  fromUserSkills?: string[];
+
   toUserId: string;
   status: "pending" | "accepted" | "rejected";
 }
+
 
 /* ---------------- COMPONENT ---------------- */
 
@@ -195,13 +201,14 @@ export function ConnectionsPage() {
     );
 
     const unsubscribe = onSnapshot(q, (snap) => {
-      setRequests(
-        snap.docs.map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<SkillRequest, "id">),
-        }))
-      );
-    });
+  setRequests(
+    snap.docs.map((d) => ({
+      id: d.id,
+      ...(d.data() as Omit<SkillRequest, "id">),
+    }))
+  );
+});
+
 
     return unsubscribe;
   }, [user]);
@@ -244,30 +251,46 @@ export function ConnectionsPage() {
       )}
 
       {requests.map((req) => (
-        <motion.div
-          key={req.id}
-          className="bg-white rounded-xl shadow p-4 mb-4 flex justify-between items-center"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="font-medium">
-            New connection request
-          </span>
+  <motion.div
+    key={req.id}
+    className="bg-white rounded-xl shadow p-4 mb-4 flex justify-between items-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+  >
+    <div className="flex items-center gap-3">
+      <img
+        src={req.fromUserPhoto || "/avatar.png"}
+        className="w-10 h-10 rounded-full object-cover"
+      />
 
-          <div className="flex gap-2">
-            <Button onClick={() => acceptRequest(req)}>
-              Accept
-            </Button>
+      <div>
+        <p className="font-semibold">
+          {req.fromUserName}
+        </p>
 
-            <Button
-              variant="outline"
-              onClick={() => rejectRequest(req.id)}
-            >
-              Reject
-            </Button>
-          </div>
-        </motion.div>
-      ))}
+        {req.fromUserSkills?.length > 0 && (
+          <p className="text-xs text-gray-500">
+            {req.fromUserSkills.join(", ")}
+          </p>
+        )}
+      </div>
+    </div>
+
+    <div className="flex gap-2">
+      <Button onClick={() => acceptRequest(req)}>
+        Accept
+      </Button>
+
+      <Button
+        variant="outline"
+        onClick={() => rejectRequest(req.id)}
+      >
+        Reject
+      </Button>
+    </div>
+  </motion.div>
+))}
+
     </div>
   );
 }
