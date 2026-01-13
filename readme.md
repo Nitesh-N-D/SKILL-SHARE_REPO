@@ -165,7 +165,8 @@ REACT_APP_FIREBASE_APP_ID=your_app_id
 
 ## 🤝 Contributors
 
-* **Bhuvaneshwar TS** – Developer
+* **Bhuvaneshwar TS** – Backend Developer
+* **Nitesh ND** – Frontend Developer
 
 ---
 
