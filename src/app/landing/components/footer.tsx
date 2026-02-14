@@ -1,21 +1,156 @@
+// // // // // import { motion } from "motion/react";
+// // // // // import { Mail, Github, Twitter, Heart, Sparkles } from "lucide-react";
+
+// // // // // export function Footer() {
+// // // // //   const currentYear = new Date().getFullYear();
+
+// // // // //   return (
+// // // // //     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+// // // // //       {/* Background decoration */}
+// // // // //       <div className="absolute inset-0 opacity-5">
+// // // // //         <div className="absolute inset-0" style={{
+// // // // //           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+// // // // //           backgroundSize: '40px 40px',
+// // // // //         }} />
+// // // // //       </div>
+
+// // // // //       <div className="container mx-auto px-4 relative z-10">
+// // // // //         <div className="grid md:grid-cols-4 gap-12 mb-12">
+// // // // //           {/* Brand section */}
+// // // // //           <motion.div
+// // // // //             initial={{ opacity: 0, y: 20 }}
+// // // // //             whileInView={{ opacity: 1, y: 0 }}
+// // // // //             viewport={{ once: true }}
+// // // // //             className="md:col-span-2"
+// // // // //           >
+// // // // //             <div className="flex items-center gap-2 mb-4">
+// // // // //               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+// // // // //                 <Sparkles className="w-6 h-6 text-white" />
+// // // // //               </div>
+// // // // //               <h3 className="text-2xl">Skill Share</h3>
+// // // // //             </div>
+// // // // //             <p className="text-gray-300 mb-6 max-w-md">
+// // // // //               Connecting students, sharing knowledge, and building a collaborative campus community.
+// // // // //               Your journey to better learning starts here.
+// // // // //             </p>
+// // // // //             <div className="flex items-center gap-2 text-sm text-gray-400">
+// // // // //               <Heart className="w-4 h-4 text-pink-500" />
+// // // // //               <span>Built with love for students, by students</span>
+// // // // //             </div>
+// // // // //           </motion.div>
+
+// // // // //           {/* Quick Links */}
+// // // // //           <motion.div
+// // // // //             initial={{ opacity: 0, y: 20 }}
+// // // // //             whileInView={{ opacity: 1, y: 0 }}
+// // // // //             viewport={{ once: true }}
+// // // // //             transition={{ delay: 0.1 }}
+// // // // //           >
+// // // // //             <h4 className="mb-4">Quick Links</h4>
+// // // // //             <ul className="space-y-3">
+// // // // //               {["About Us", "How It Works", "Features", "FAQ", "Privacy Policy"].map((link, index) => (
+// // // // //                 <li key={index}>
+// // // // //                   <motion.a
+// // // // //                     href="#"
+// // // // //                     className="text-gray-300 hover:text-white transition-colors inline-block"
+// // // // //                     whileHover={{ x: 5 }}
+// // // // //                   >
+// // // // //                     {link}
+// // // // //                   </motion.a>
+// // // // //                 </li>
+// // // // //               ))}
+// // // // //             </ul>
+// // // // //           </motion.div>
+
+// // // // //           {/* Contact */}
+// // // // //           <motion.div
+// // // // //             initial={{ opacity: 0, y: 20 }}
+// // // // //             whileInView={{ opacity: 1, y: 0 }}
+// // // // //             viewport={{ once: true }}
+// // // // //             transition={{ delay: 0.2 }}
+// // // // //           >
+// // // // //             <h4 className="mb-4">Connect</h4>
+// // // // //             <ul className="space-y-3">
+// // // // //               <li>
+// // // // //                 <a href="mailto:skillshareweb2026@gmail.com" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2">
+// // // // //                   <Mail className="w-4 h-4" />
+// // // // //                   <span>skillshareweb2026@gmail.com</span>
+// // // // //                 </a>
+// // // // //               </li>
+// // // // //               <li>
+// // // // //                 <div className="flex gap-4 mt-4">
+// // // // //                   <motion.a
+// // // // //                     href="#"
+// // // // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+// // // // //                     whileHover={{ scale: 1.1, rotate: 5 }}
+// // // // //                     whileTap={{ scale: 0.95 }}
+// // // // //                   >
+// // // // //                     <Twitter className="w-5 h-5" />
+// // // // //                   </motion.a>
+// // // // //                   <motion.a
+// // // // //                     href="#"
+// // // // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+// // // // //                     whileHover={{ scale: 1.1, rotate: -5 }}
+// // // // //                     whileTap={{ scale: 0.95 }}
+// // // // //                   >
+// // // // //                     <Github className="w-5 h-5" />
+// // // // //                   </motion.a>
+// // // // //                 </div>
+// // // // //               </li>
+// // // // //             </ul>
+// // // // //           </motion.div>
+// // // // //         </div>
+
+// // // // //         {/* Bottom bar */}
+// // // // //         <motion.div
+// // // // //           className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+// // // // //           initial={{ opacity: 0 }}
+// // // // //           whileInView={{ opacity: 1 }}
+// // // // //           viewport={{ once: true }}
+// // // // //           transition={{ delay: 0.3 }}
+// // // // //         >
+// // // // //           <p className="text-gray-400 text-sm">
+// // // // //             © {currentYear} Skill Share. All rights reserved.
+// // // // //           </p>
+// // // // //           <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
+// // // // //             <Sparkles className="w-4 h-4 text-purple-400" />
+// // // // //             <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+// // // // //           </div>
+// // // // //         </motion.div>
+// // // // //       </div>
+// // // // //     </footer>
+// // // // //   );
+// // // // // }
 // // // // import { motion } from "motion/react";
 // // // // import { Mail, Github, Twitter, Heart, Sparkles } from "lucide-react";
 
 // // // // export function Footer() {
 // // // //   const currentYear = new Date().getFullYear();
 
+// // // //   const scrollTo = (id: string) => {
+// // // //     const el = document.getElementById(id);
+// // // //     if (el) {
+// // // //       el.scrollIntoView({ behavior: "smooth" });
+// // // //     }
+// // // //   };
+
 // // // //   return (
 // // // //     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+
 // // // //       {/* Background decoration */}
 // // // //       <div className="absolute inset-0 opacity-5">
-// // // //         <div className="absolute inset-0" style={{
-// // // //           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-// // // //           backgroundSize: '40px 40px',
-// // // //         }} />
+// // // //         <div
+// // // //           className="absolute inset-0"
+// // // //           style={{
+// // // //             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+// // // //             backgroundSize: "40px 40px",
+// // // //           }}
+// // // //         />
 // // // //       </div>
 
 // // // //       <div className="container mx-auto px-4 relative z-10">
 // // // //         <div className="grid md:grid-cols-4 gap-12 mb-12">
+
 // // // //           {/* Brand section */}
 // // // //           <motion.div
 // // // //             initial={{ opacity: 0, y: 20 }}
@@ -29,10 +164,12 @@
 // // // //               </div>
 // // // //               <h3 className="text-2xl">Skill Share</h3>
 // // // //             </div>
+
 // // // //             <p className="text-gray-300 mb-6 max-w-md">
 // // // //               Connecting students, sharing knowledge, and building a collaborative campus community.
 // // // //               Your journey to better learning starts here.
 // // // //             </p>
+
 // // // //             <div className="flex items-center gap-2 text-sm text-gray-400">
 // // // //               <Heart className="w-4 h-4 text-pink-500" />
 // // // //               <span>Built with love for students, by students</span>
@@ -48,17 +185,31 @@
 // // // //           >
 // // // //             <h4 className="mb-4">Quick Links</h4>
 // // // //             <ul className="space-y-3">
-// // // //               {["About Us", "How It Works", "Features", "FAQ", "Privacy Policy"].map((link, index) => (
-// // // //                 <li key={index}>
-// // // //                   <motion.a
-// // // //                     href="#"
-// // // //                     className="text-gray-300 hover:text-white transition-colors inline-block"
-// // // //                     whileHover={{ x: 5 }}
-// // // //                   >
-// // // //                     {link}
-// // // //                   </motion.a>
-// // // //                 </li>
-// // // //               ))}
+// // // //               <li>
+// // // //                 <button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white transition">
+// // // //                   About Us
+// // // //                 </button>
+// // // //               </li>
+// // // //               <li>
+// // // //                 <button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white transition">
+// // // //                   How It Works
+// // // //                 </button>
+// // // //               </li>
+// // // //               <li>
+// // // //                 <button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white transition">
+// // // //                   Features
+// // // //                 </button>
+// // // //               </li>
+// // // //               <li>
+// // // //                 <button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white transition">
+// // // //                   FAQ
+// // // //                 </button>
+// // // //               </li>
+// // // //               <li>
+// // // //                 <button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white transition">
+// // // //                   Privacy Policy
+// // // //                 </button>
+// // // //               </li>
 // // // //             </ul>
 // // // //           </motion.div>
 
@@ -72,7 +223,10 @@
 // // // //             <h4 className="mb-4">Connect</h4>
 // // // //             <ul className="space-y-3">
 // // // //               <li>
-// // // //                 <a href="mailto:skillshareweb2026@gmail.com" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2">
+// // // //                 <a
+// // // //                   href="mailto:skillshareweb2026@gmail.com"
+// // // //                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
+// // // //                 >
 // // // //                   <Mail className="w-4 h-4" />
 // // // //                   <span>skillshareweb2026@gmail.com</span>
 // // // //                 </a>
@@ -82,16 +236,13 @@
 // // // //                   <motion.a
 // // // //                     href="#"
 // // // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-// // // //                     whileHover={{ scale: 1.1, rotate: 5 }}
-// // // //                     whileTap={{ scale: 0.95 }}
 // // // //                   >
 // // // //                     <Twitter className="w-5 h-5" />
 // // // //                   </motion.a>
+
 // // // //                   <motion.a
 // // // //                     href="#"
 // // // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-// // // //                     whileHover={{ scale: 1.1, rotate: -5 }}
-// // // //                     whileTap={{ scale: 0.95 }}
 // // // //                   >
 // // // //                     <Github className="w-5 h-5" />
 // // // //                   </motion.a>
@@ -112,6 +263,7 @@
 // // // //           <p className="text-gray-400 text-sm">
 // // // //             © {currentYear} Skill Share. All rights reserved.
 // // // //           </p>
+
 // // // //           <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
 // // // //             <Sparkles className="w-4 h-4 text-purple-400" />
 // // // //             <span className="text-sm text-purple-300">Hackathon Project 2026</span>
@@ -122,10 +274,12 @@
 // // // //   );
 // // // // }
 // // // import { motion } from "motion/react";
-// // // import { Mail, Github, Twitter, Heart, Sparkles } from "lucide-react";
+// // // import { Mail, Github, Twitter, Heart, Sparkles, X } from "lucide-react";
+// // // import { useState } from "react";
 
 // // // export function Footer() {
 // // //   const currentYear = new Date().getFullYear();
+// // //   const [openForm, setOpenForm] = useState(false);
 
 // // //   const scrollTo = (id: string) => {
 // // //     const el = document.getElementById(id);
@@ -135,151 +289,123 @@
 // // //   };
 
 // // //   return (
-// // //     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+// // //     <>
+// // //       <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
 
-// // //       {/* Background decoration */}
-// // //       <div className="absolute inset-0 opacity-5">
-// // //         <div
-// // //           className="absolute inset-0"
-// // //           style={{
-// // //             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-// // //             backgroundSize: "40px 40px",
-// // //           }}
-// // //         />
-// // //       </div>
-
-// // //       <div className="container mx-auto px-4 relative z-10">
-// // //         <div className="grid md:grid-cols-4 gap-12 mb-12">
-
-// // //           {/* Brand section */}
-// // //           <motion.div
-// // //             initial={{ opacity: 0, y: 20 }}
-// // //             whileInView={{ opacity: 1, y: 0 }}
-// // //             viewport={{ once: true }}
-// // //             className="md:col-span-2"
-// // //           >
-// // //             <div className="flex items-center gap-2 mb-4">
-// // //               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-// // //                 <Sparkles className="w-6 h-6 text-white" />
-// // //               </div>
-// // //               <h3 className="text-2xl">Skill Share</h3>
-// // //             </div>
-
-// // //             <p className="text-gray-300 mb-6 max-w-md">
-// // //               Connecting students, sharing knowledge, and building a collaborative campus community.
-// // //               Your journey to better learning starts here.
-// // //             </p>
-
-// // //             <div className="flex items-center gap-2 text-sm text-gray-400">
-// // //               <Heart className="w-4 h-4 text-pink-500" />
-// // //               <span>Built with love for students, by students</span>
-// // //             </div>
-// // //           </motion.div>
-
-// // //           {/* Quick Links */}
-// // //           <motion.div
-// // //             initial={{ opacity: 0, y: 20 }}
-// // //             whileInView={{ opacity: 1, y: 0 }}
-// // //             viewport={{ once: true }}
-// // //             transition={{ delay: 0.1 }}
-// // //           >
-// // //             <h4 className="mb-4">Quick Links</h4>
-// // //             <ul className="space-y-3">
-// // //               <li>
-// // //                 <button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white transition">
-// // //                   About Us
-// // //                 </button>
-// // //               </li>
-// // //               <li>
-// // //                 <button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white transition">
-// // //                   How It Works
-// // //                 </button>
-// // //               </li>
-// // //               <li>
-// // //                 <button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white transition">
-// // //                   Features
-// // //                 </button>
-// // //               </li>
-// // //               <li>
-// // //                 <button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white transition">
-// // //                   FAQ
-// // //                 </button>
-// // //               </li>
-// // //               <li>
-// // //                 <button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white transition">
-// // //                   Privacy Policy
-// // //                 </button>
-// // //               </li>
-// // //             </ul>
-// // //           </motion.div>
-
-// // //           {/* Contact */}
-// // //           <motion.div
-// // //             initial={{ opacity: 0, y: 20 }}
-// // //             whileInView={{ opacity: 1, y: 0 }}
-// // //             viewport={{ once: true }}
-// // //             transition={{ delay: 0.2 }}
-// // //           >
-// // //             <h4 className="mb-4">Connect</h4>
-// // //             <ul className="space-y-3">
-// // //               <li>
-// // //                 <a
-// // //                   href="mailto:skillshareweb2026@gmail.com"
-// // //                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
-// // //                 >
-// // //                   <Mail className="w-4 h-4" />
-// // //                   <span>skillshareweb2026@gmail.com</span>
-// // //                 </a>
-// // //               </li>
-// // //               <li>
-// // //                 <div className="flex gap-4 mt-4">
-// // //                   <motion.a
-// // //                     href="#"
-// // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-// // //                   >
-// // //                     <Twitter className="w-5 h-5" />
-// // //                   </motion.a>
-
-// // //                   <motion.a
-// // //                     href="#"
-// // //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-// // //                   >
-// // //                     <Github className="w-5 h-5" />
-// // //                   </motion.a>
-// // //                 </div>
-// // //               </li>
-// // //             </ul>
-// // //           </motion.div>
+// // //         {/* Background decoration */}
+// // //         <div className="absolute inset-0 opacity-5">
+// // //           <div
+// // //             className="absolute inset-0"
+// // //             style={{
+// // //               backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+// // //               backgroundSize: "40px 40px",
+// // //             }}
+// // //           />
 // // //         </div>
 
-// // //         {/* Bottom bar */}
-// // //         <motion.div
-// // //           className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
-// // //           initial={{ opacity: 0 }}
-// // //           whileInView={{ opacity: 1 }}
-// // //           viewport={{ once: true }}
-// // //           transition={{ delay: 0.3 }}
-// // //         >
-// // //           <p className="text-gray-400 text-sm">
-// // //             © {currentYear} Skill Share. All rights reserved.
-// // //           </p>
+// // //         <div className="container mx-auto px-4 relative z-10">
+// // //           <div className="grid md:grid-cols-4 gap-12 mb-12">
 
-// // //           <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
-// // //             <Sparkles className="w-4 h-4 text-purple-400" />
-// // //             <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+// // //             {/* Brand */}
+// // //             <motion.div className="md:col-span-2">
+// // //               <div className="flex items-center gap-2 mb-4">
+// // //                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+// // //                   <Sparkles className="w-6 h-6 text-white" />
+// // //                 </div>
+// // //                 <h3 className="text-2xl">Skill Share</h3>
+// // //               </div>
+
+// // //               <p className="text-gray-300 mb-6 max-w-md">
+// // //                 Connecting students, sharing knowledge, and building a collaborative campus community.
+// // //               </p>
+
+// // //               <div className="flex items-center gap-2 text-sm text-gray-400">
+// // //                 <Heart className="w-4 h-4 text-pink-500" />
+// // //                 <span>Built with love for students, by students</span>
+// // //               </div>
+// // //             </motion.div>
+
+// // //             {/* Quick Links */}
+// // //             <motion.div>
+// // //               <h4 className="mb-4">Quick Links</h4>
+// // //               <ul className="space-y-3">
+// // //                 <li><button onClick={() => scrollTo("about")} className="hover:text-white">About Us</button></li>
+// // //                 <li><button onClick={() => scrollTo("how-it-works")} className="hover:text-white">How It Works</button></li>
+// // //                 <li><button onClick={() => scrollTo("features")} className="hover:text-white">Features</button></li>
+// // //                 <li><button onClick={() => scrollTo("faq")} className="hover:text-white">FAQ</button></li>
+// // //                 <li><button onClick={() => scrollTo("privacy")} className="hover:text-white">Privacy Policy</button></li>
+// // //               </ul>
+// // //             </motion.div>
+
+// // //             {/* Contact */}
+// // //             <motion.div>
+// // //               <h4 className="mb-4">Connect</h4>
+// // //               <ul className="space-y-3">
+// // //                 <li>
+// // //                   <button
+// // //                     onClick={() => setOpenForm(true)}
+// // //                     className="flex items-center gap-2 text-gray-300 hover:text-white"
+// // //                   >
+// // //                     <Mail className="w-4 h-4" />
+// // //                     Contact Us
+// // //                   </button>
+// // //                 </li>
+
+// // //                 <li>
+// // //                   <div className="flex gap-4 mt-4">
+// // //                     <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+// // //                       <Twitter className="w-5 h-5" />
+// // //                     </a>
+// // //                     <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+// // //                       <Github className="w-5 h-5" />
+// // //                     </a>
+// // //                   </div>
+// // //                 </li>
+// // //               </ul>
+// // //             </motion.div>
 // // //           </div>
-// // //         </motion.div>
-// // //       </div>
-// // //     </footer>
+
+// // //           {/* Bottom bar */}
+// // //           <div className="pt-8 border-t border-white/10 flex justify-between items-center">
+// // //             <p className="text-gray-400 text-sm">
+// // //               © {currentYear} Skill Share. All rights reserved.
+// // //             </p>
+
+// // //             <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
+// // //               <Sparkles className="w-4 h-4 text-purple-400" />
+// // //               <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+// // //             </div>
+// // //           </div>
+// // //         </div>
+// // //       </footer>
+
+// // //       {/* ================= GOOGLE FORM MODAL ================= */}
+// // //       {openForm && (
+// // //         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+// // //           <div className="bg-white rounded-xl w-full max-w-4xl h-[90vh] relative overflow-hidden">
+
+// // //             <button
+// // //               onClick={() => setOpenForm(false)}
+// // //               className="absolute top-4 right-4 z-10 bg-gray-100 rounded-full p-2"
+// // //             >
+// // //               <X />
+// // //             </button>
+
+// // //             <iframe
+// // //               src="https://docs.google.com/forms/d/e/1FAIpQLScj6m7G0Jsz8HDBld0lHB6aqjuo9t2PouDbYkjbqF2rvrz4_Q/viewform?embedded=true"
+// // //               className="w-full h-full border-0"
+// // //             />
+// // //           </div>
+// // //         </div>
+// // //       )}
+// // //     </>
 // // //   );
 // // // }
 // // import { motion } from "motion/react";
-// // import { Mail, Github, Twitter, Heart, Sparkles, X } from "lucide-react";
-// // import { useState } from "react";
+// // import { Mail, Github, Twitter, Heart, Sparkles } from "lucide-react";
 
 // // export function Footer() {
 // //   const currentYear = new Date().getFullYear();
-// //   const [openForm, setOpenForm] = useState(false);
 
 // //   const scrollTo = (id: string) => {
 // //     const el = document.getElementById(id);
@@ -289,279 +415,304 @@
 // //   };
 
 // //   return (
-// //     <>
-// //       <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+// //     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
 
-// //         {/* Background decoration */}
-// //         <div className="absolute inset-0 opacity-5">
-// //           <div
-// //             className="absolute inset-0"
-// //             style={{
-// //               backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-// //               backgroundSize: "40px 40px",
-// //             }}
-// //           />
-// //         </div>
+// //       {/* Background decoration */}
+// //       <div className="absolute inset-0 opacity-5">
+// //         <div
+// //           className="absolute inset-0"
+// //           style={{
+// //             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+// //             backgroundSize: "40px 40px",
+// //           }}
+// //         />
+// //       </div>
 
-// //         <div className="container mx-auto px-4 relative z-10">
-// //           <div className="grid md:grid-cols-4 gap-12 mb-12">
+// //       <div className="container mx-auto px-4 relative z-10">
+// //         <div className="grid md:grid-cols-4 gap-12 mb-12">
 
-// //             {/* Brand */}
-// //             <motion.div className="md:col-span-2">
-// //               <div className="flex items-center gap-2 mb-4">
-// //                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-// //                   <Sparkles className="w-6 h-6 text-white" />
-// //                 </div>
-// //                 <h3 className="text-2xl">Skill Share</h3>
+// //           {/* Brand section */}
+// //           <motion.div
+// //             initial={{ opacity: 0, y: 20 }}
+// //             whileInView={{ opacity: 1, y: 0 }}
+// //             viewport={{ once: true }}
+// //             className="md:col-span-2"
+// //           >
+// //             <div className="flex items-center gap-2 mb-4">
+// //               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+// //                 <Sparkles className="w-6 h-6 text-white" />
 // //               </div>
+// //               <h3 className="text-2xl">Skill Share</h3>
+// //             </div>
 
-// //               <p className="text-gray-300 mb-6 max-w-md">
-// //                 Connecting students, sharing knowledge, and building a collaborative campus community.
-// //               </p>
-
-// //               <div className="flex items-center gap-2 text-sm text-gray-400">
-// //                 <Heart className="w-4 h-4 text-pink-500" />
-// //                 <span>Built with love for students, by students</span>
-// //               </div>
-// //             </motion.div>
-
-// //             {/* Quick Links */}
-// //             <motion.div>
-// //               <h4 className="mb-4">Quick Links</h4>
-// //               <ul className="space-y-3">
-// //                 <li><button onClick={() => scrollTo("about")} className="hover:text-white">About Us</button></li>
-// //                 <li><button onClick={() => scrollTo("how-it-works")} className="hover:text-white">How It Works</button></li>
-// //                 <li><button onClick={() => scrollTo("features")} className="hover:text-white">Features</button></li>
-// //                 <li><button onClick={() => scrollTo("faq")} className="hover:text-white">FAQ</button></li>
-// //                 <li><button onClick={() => scrollTo("privacy")} className="hover:text-white">Privacy Policy</button></li>
-// //               </ul>
-// //             </motion.div>
-
-// //             {/* Contact */}
-// //             <motion.div>
-// //               <h4 className="mb-4">Connect</h4>
-// //               <ul className="space-y-3">
-// //                 <li>
-// //                   <button
-// //                     onClick={() => setOpenForm(true)}
-// //                     className="flex items-center gap-2 text-gray-300 hover:text-white"
-// //                   >
-// //                     <Mail className="w-4 h-4" />
-// //                     Contact Us
-// //                   </button>
-// //                 </li>
-
-// //                 <li>
-// //                   <div className="flex gap-4 mt-4">
-// //                     <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-// //                       <Twitter className="w-5 h-5" />
-// //                     </a>
-// //                     <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-// //                       <Github className="w-5 h-5" />
-// //                     </a>
-// //                   </div>
-// //                 </li>
-// //               </ul>
-// //             </motion.div>
-// //           </div>
-
-// //           {/* Bottom bar */}
-// //           <div className="pt-8 border-t border-white/10 flex justify-between items-center">
-// //             <p className="text-gray-400 text-sm">
-// //               © {currentYear} Skill Share. All rights reserved.
+// //             <p className="text-gray-300 mb-6 max-w-md">
+// //               Connecting students, sharing knowledge, and building a collaborative campus community.
+// //               Your journey to better learning starts here.
 // //             </p>
 
-// //             <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
-// //               <Sparkles className="w-4 h-4 text-purple-400" />
-// //               <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+// //             <div className="flex items-center gap-2 text-sm text-gray-400">
+// //               <Heart className="w-4 h-4 text-pink-500" />
+// //               <span>Built with love for students, by students</span>
 // //             </div>
-// //           </div>
+// //           </motion.div>
+
+// //           {/* Quick Links */}
+// //           <motion.div
+// //             initial={{ opacity: 0, y: 20 }}
+// //             whileInView={{ opacity: 1, y: 0 }}
+// //             viewport={{ once: true }}
+// //             transition={{ delay: 0.1 }}
+// //           >
+// //             <h4 className="mb-4">Quick Links</h4>
+// //             <ul className="space-y-3">
+// //               <li>
+// //                 <button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white transition">
+// //                   About Us
+// //                 </button>
+// //               </li>
+// //               <li>
+// //                 <button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white transition">
+// //                   How It Works
+// //                 </button>
+// //               </li>
+// //               <li>
+// //                 <button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white transition">
+// //                   Features
+// //                 </button>
+// //               </li>
+// //               <li>
+// //                 <button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white transition">
+// //                   FAQ
+// //                 </button>
+// //               </li>
+// //               <li>
+// //                 <button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white transition">
+// //                   Privacy Policy
+// //                 </button>
+// //               </li>
+// //             </ul>
+// //           </motion.div>
+
+// //           {/* ================= CONNECT SECTION ================= */}
+// //           <motion.div
+// //             initial={{ opacity: 0, y: 20 }}
+// //             whileInView={{ opacity: 1, y: 0 }}
+// //             viewport={{ once: true }}
+// //             transition={{ delay: 0.2 }}
+// //           >
+// //             <h4 className="mb-4">Connect</h4>
+// //             <ul className="space-y-3">
+
+// //               {/* Email */}
+// //               <li>
+// //                 <a
+// //                   href="mailto:skillshareweb2026@gmail.com"
+// //                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
+// //                 >
+// //                   <Mail className="w-4 h-4" />
+// //                   <span>skillshareweb2026@gmail.com</span>
+// //                 </a>
+// //               </li>
+
+// //               {/* Social icons */}
+// //               <li>
+// //                 <div className="flex gap-4 mt-4">
+// //                   <motion.a
+// //                     href="#"
+// //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+// //                     whileHover={{ scale: 1.1 }}
+// //                   >
+// //                     <Twitter className="w-5 h-5" />
+// //                   </motion.a>
+
+// //                   <motion.a
+// //                     href="#"
+// //                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+// //                     whileHover={{ scale: 1.1 }}
+// //                   >
+// //                     <Github className="w-5 h-5" />
+// //                   </motion.a>
+// //                 </div>
+// //               </li>
+
+// //             </ul>
+// //           </motion.div>
 // //         </div>
-// //       </footer>
 
-// //       {/* ================= GOOGLE FORM MODAL ================= */}
-// //       {openForm && (
-// //         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
-// //           <div className="bg-white rounded-xl w-full max-w-4xl h-[90vh] relative overflow-hidden">
+// //         {/* Bottom bar */}
+// //         <motion.div
+// //           className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+// //           initial={{ opacity: 0 }}
+// //           whileInView={{ opacity: 1 }}
+// //           viewport={{ once: true }}
+// //           transition={{ delay: 0.3 }}
+// //         >
+// //           <p className="text-gray-400 text-sm">
+// //             © {currentYear} Skill Share. All rights reserved.
+// //           </p>
 
-// //             <button
-// //               onClick={() => setOpenForm(false)}
-// //               className="absolute top-4 right-4 z-10 bg-gray-100 rounded-full p-2"
-// //             >
-// //               <X />
-// //             </button>
-
-// //             <iframe
-// //               src="https://docs.google.com/forms/d/e/1FAIpQLScj6m7G0Jsz8HDBld0lHB6aqjuo9t2PouDbYkjbqF2rvrz4_Q/viewform?embedded=true"
-// //               className="w-full h-full border-0"
-// //             />
+// //           <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
+// //             <Sparkles className="w-4 h-4 text-purple-400" />
+// //             <span className="text-sm text-purple-300">Hackathon Project 2026</span>
 // //           </div>
-// //         </div>
-// //       )}
-// //     </>
+// //         </motion.div>
+// //       </div>
+// //     </footer>
 // //   );
 // // }
 // import { motion } from "motion/react";
-// import { Mail, Github, Twitter, Heart, Sparkles } from "lucide-react";
+// import { Mail, Github, Twitter, Heart, Sparkles, X, MessageSquare } from "lucide-react";
+// import { useState } from "react";
 
 // export function Footer() {
 //   const currentYear = new Date().getFullYear();
+//   const [showForm, setShowForm] = useState(false);
 
 //   const scrollTo = (id: string) => {
 //     const el = document.getElementById(id);
-//     if (el) {
-//       el.scrollIntoView({ behavior: "smooth" });
-//     }
+//     if (el) el.scrollIntoView({ behavior: "smooth" });
 //   };
 
 //   return (
-//     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+//     <>
+//       {/* ================= FOOTER ================= */}
+//       <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
 
-//       {/* Background decoration */}
-//       <div className="absolute inset-0 opacity-5">
-//         <div
-//           className="absolute inset-0"
-//           style={{
-//             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-//             backgroundSize: "40px 40px",
-//           }}
-//         />
-//       </div>
-
-//       <div className="container mx-auto px-4 relative z-10">
-//         <div className="grid md:grid-cols-4 gap-12 mb-12">
-
-//           {/* Brand section */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             className="md:col-span-2"
-//           >
-//             <div className="flex items-center gap-2 mb-4">
-//               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-//                 <Sparkles className="w-6 h-6 text-white" />
-//               </div>
-//               <h3 className="text-2xl">Skill Share</h3>
-//             </div>
-
-//             <p className="text-gray-300 mb-6 max-w-md">
-//               Connecting students, sharing knowledge, and building a collaborative campus community.
-//               Your journey to better learning starts here.
-//             </p>
-
-//             <div className="flex items-center gap-2 text-sm text-gray-400">
-//               <Heart className="w-4 h-4 text-pink-500" />
-//               <span>Built with love for students, by students</span>
-//             </div>
-//           </motion.div>
-
-//           {/* Quick Links */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ delay: 0.1 }}
-//           >
-//             <h4 className="mb-4">Quick Links</h4>
-//             <ul className="space-y-3">
-//               <li>
-//                 <button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white transition">
-//                   About Us
-//                 </button>
-//               </li>
-//               <li>
-//                 <button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white transition">
-//                   How It Works
-//                 </button>
-//               </li>
-//               <li>
-//                 <button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white transition">
-//                   Features
-//                 </button>
-//               </li>
-//               <li>
-//                 <button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white transition">
-//                   FAQ
-//                 </button>
-//               </li>
-//               <li>
-//                 <button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white transition">
-//                   Privacy Policy
-//                 </button>
-//               </li>
-//             </ul>
-//           </motion.div>
-
-//           {/* ================= CONNECT SECTION ================= */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ delay: 0.2 }}
-//           >
-//             <h4 className="mb-4">Connect</h4>
-//             <ul className="space-y-3">
-
-//               {/* Email */}
-//               <li>
-//                 <a
-//                   href="mailto:skillshareweb2026@gmail.com"
-//                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
-//                 >
-//                   <Mail className="w-4 h-4" />
-//                   <span>skillshareweb2026@gmail.com</span>
-//                 </a>
-//               </li>
-
-//               {/* Social icons */}
-//               <li>
-//                 <div className="flex gap-4 mt-4">
-//                   <motion.a
-//                     href="#"
-//                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-//                     whileHover={{ scale: 1.1 }}
-//                   >
-//                     <Twitter className="w-5 h-5" />
-//                   </motion.a>
-
-//                   <motion.a
-//                     href="#"
-//                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-//                     whileHover={{ scale: 1.1 }}
-//                   >
-//                     <Github className="w-5 h-5" />
-//                   </motion.a>
-//                 </div>
-//               </li>
-
-//             </ul>
-//           </motion.div>
+//         {/* Background decoration */}
+//         <div className="absolute inset-0 opacity-5">
+//           <div
+//             className="absolute inset-0"
+//             style={{
+//               backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+//               backgroundSize: "40px 40px",
+//             }}
+//           />
 //         </div>
 
-//         {/* Bottom bar */}
-//         <motion.div
-//           className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
-//           initial={{ opacity: 0 }}
-//           whileInView={{ opacity: 1 }}
-//           viewport={{ once: true }}
-//           transition={{ delay: 0.3 }}
-//         >
-//           <p className="text-gray-400 text-sm">
-//             © {currentYear} Skill Share. All rights reserved.
-//           </p>
+//         <div className="container mx-auto px-4 relative z-10">
+//           <div className="grid md:grid-cols-4 gap-12 mb-12">
 
-//           <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
-//             <Sparkles className="w-4 h-4 text-purple-400" />
-//             <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+//             {/* Brand */}
+//             <motion.div className="md:col-span-2">
+//               <div className="flex items-center gap-2 mb-4">
+//                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+//                   <Sparkles className="w-6 h-6 text-white" />
+//                 </div>
+//                 <h3 className="text-2xl">Skill Share</h3>
+//               </div>
+
+//               <p className="text-gray-300 mb-6 max-w-md">
+//                 Connecting students, sharing knowledge, and building a collaborative campus community.
+//                 Your journey to better learning starts here.
+//               </p>
+
+//               <div className="flex items-center gap-2 text-sm text-gray-400">
+//                 <Heart className="w-4 h-4 text-pink-500" />
+//                 <span>Built with love for students, by students</span>
+//               </div>
+//             </motion.div>
+
+//             {/* Quick Links */}
+//             <motion.div>
+//               <h4 className="mb-4">Quick Links</h4>
+//               <ul className="space-y-3">
+//                 <li><button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white">About Us</button></li>
+//                 <li><button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white">How It Works</button></li>
+//                 <li><button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white">Features</button></li>
+//                 <li><button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white">FAQ</button></li>
+//                 <li><button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white">Privacy Policy</button></li>
+//               </ul>
+//             </motion.div>
+
+//             {/* Connect */}
+//             <motion.div>
+//               <h4 className="mb-4">Connect</h4>
+//               <ul className="space-y-4">
+
+//                 {/* Email Display */}
+//                 <li className="flex items-center gap-2 text-gray-300">
+//                   <Mail className="w-4 h-4" />
+//                   <span>skillshareweb2026@gmail.com</span>
+//                 </li>
+
+//                 {/* Contact Form Button */}
+//                 <li>
+//                   <button
+//                     onClick={() => setShowForm(true)}
+//                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 transition text-white"
+//                   >
+//                     <MessageSquare className="w-4 h-4" />
+//                     Contact Form
+//                   </button>
+//                 </li>
+
+//                 {/* Social Icons */}
+//                 <li>
+//                   <div className="flex gap-4 mt-4">
+//                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+//                       <Twitter className="w-5 h-5" />
+//                     </div>
+//                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+//                       <Github className="w-5 h-5" />
+//                     </div>
+//                   </div>
+//                 </li>
+
+//               </ul>
+//             </motion.div>
 //           </div>
-//         </motion.div>
-//       </div>
-//     </footer>
+
+//           {/* Bottom bar */}
+//           <div className="pt-8 border-t border-white/10 flex justify-between items-center">
+//             <p className="text-gray-400 text-sm">
+//               © {currentYear} Skill Share. All rights reserved.
+//             </p>
+
+//             <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
+//               <Sparkles className="w-4 h-4 text-purple-400" />
+//               <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+//             </div>
+//           </div>
+//         </div>
+//       </footer>
+
+//       {/* ================= GOOGLE FORM POPUP ================= */}
+//       {showForm && (
+//         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4">
+
+//           <div className="bg-white rounded-xl w-full max-w-4xl h-[85vh] relative overflow-hidden shadow-2xl">
+
+//             {/* Close Button */}
+//             <button
+//               onClick={() => setShowForm(false)}
+//               className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 p-2 rounded-full"
+//             >
+//               <X className="w-5 h-5 text-gray-700" />
+//             </button>
+
+//             {/* Google Form */}
+//             <iframe
+//               src="https://docs.google.com/forms/d/e/1FAIpQLScj6m7G0Jsz8HDBld0lHB6aqjuo9t2PouDbYkjbqF2rvrz4_Q/viewform?embedded=true"
+//               className="w-full h-full border-0"
+//             >
+//               Loading…
+//             </iframe>
+//           </div>
+//         </div>
+//       )}
+//     </>
 //   );
 // }
 import { motion } from "motion/react";
-import { Mail, Github, Twitter, Heart, Sparkles, X, MessageSquare } from "lucide-react";
+import {
+  Mail,
+  Github,
+  Twitter,
+  Heart,
+  Sparkles,
+  X,
+  MessageSquare,
+} from "lucide-react";
 import { useState } from "react";
 
 export function Footer() {
@@ -576,37 +727,38 @@ export function Footer() {
   return (
     <>
       {/* ================= FOOTER ================= */}
-      <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+      <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-12 sm:py-16 relative overflow-hidden">
 
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+              backgroundImage:
+                "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
               backgroundSize: "40px 40px",
             }}
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12 mb-10 sm:mb-12">
 
             {/* Brand */}
             <motion.div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-white" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h3 className="text-2xl">Skill Share</h3>
+                <h3 className="text-xl sm:text-2xl">Skill Share</h3>
               </div>
 
-              <p className="text-gray-300 mb-6 max-w-md">
-                Connecting students, sharing knowledge, and building a collaborative campus community.
-                Your journey to better learning starts here.
+              <p className="text-sm sm:text-base text-gray-300 mb-6 max-w-md">
+                Connecting students, sharing knowledge, and building a collaborative
+                campus community. Your journey to better learning starts here.
               </p>
 
-              <div className="flex items-center gap-2 text-sm text-gray-400">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
                 <Heart className="w-4 h-4 text-pink-500" />
                 <span>Built with love for students, by students</span>
               </div>
@@ -614,23 +766,43 @@ export function Footer() {
 
             {/* Quick Links */}
             <motion.div>
-              <h4 className="mb-4">Quick Links</h4>
+              <h4 className="mb-4 text-base sm:text-lg">Quick Links</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => scrollTo("about")} className="text-gray-300 hover:text-white">About Us</button></li>
-                <li><button onClick={() => scrollTo("how-it-works")} className="text-gray-300 hover:text-white">How It Works</button></li>
-                <li><button onClick={() => scrollTo("features")} className="text-gray-300 hover:text-white">Features</button></li>
-                <li><button onClick={() => scrollTo("faq")} className="text-gray-300 hover:text-white">FAQ</button></li>
-                <li><button onClick={() => scrollTo("privacy")} className="text-gray-300 hover:text-white">Privacy Policy</button></li>
+                <li>
+                  <button onClick={() => scrollTo("about")} className="text-sm sm:text-base text-gray-300 hover:text-white">
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollTo("how-it-works")} className="text-sm sm:text-base text-gray-300 hover:text-white">
+                    How It Works
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollTo("features")} className="text-sm sm:text-base text-gray-300 hover:text-white">
+                    Features
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollTo("faq")} className="text-sm sm:text-base text-gray-300 hover:text-white">
+                    FAQ
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollTo("privacy")} className="text-sm sm:text-base text-gray-300 hover:text-white">
+                    Privacy Policy
+                  </button>
+                </li>
               </ul>
             </motion.div>
 
             {/* Connect */}
             <motion.div>
-              <h4 className="mb-4">Connect</h4>
+              <h4 className="mb-4 text-base sm:text-lg">Connect</h4>
               <ul className="space-y-4">
 
-                {/* Email Display */}
-                <li className="flex items-center gap-2 text-gray-300">
+                {/* Email */}
+                <li className="flex items-center gap-2 text-sm sm:text-base text-gray-300 break-all">
                   <Mail className="w-4 h-4" />
                   <span>skillshareweb2026@gmail.com</span>
                 </li>
@@ -639,7 +811,7 @@ export function Footer() {
                 <li>
                   <button
                     onClick={() => setShowForm(true)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 transition text-white"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 transition text-sm sm:text-base text-white w-full sm:w-auto"
                   >
                     <MessageSquare className="w-4 h-4" />
                     Contact Form
@@ -649,10 +821,10 @@ export function Footer() {
                 {/* Social Icons */}
                 <li>
                   <div className="flex gap-4 mt-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center">
                       <Twitter className="w-5 h-5" />
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center">
                       <Github className="w-5 h-5" />
                     </div>
                   </div>
@@ -663,14 +835,16 @@ export function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="pt-8 border-t border-white/10 flex justify-between items-center">
-            <p className="text-gray-400 text-sm">
+          <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <p className="text-gray-400 text-xs sm:text-sm">
               © {currentYear} Skill Share. All rights reserved.
             </p>
 
             <div className="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full">
               <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-300">Hackathon Project 2026</span>
+              <span className="text-xs sm:text-sm text-purple-300">
+                Hackathon Project 2026
+              </span>
             </div>
           </div>
         </div>
@@ -680,7 +854,7 @@ export function Footer() {
       {showForm && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4">
 
-          <div className="bg-white rounded-xl w-full max-w-4xl h-[85vh] relative overflow-hidden shadow-2xl">
+          <div className="bg-white rounded-xl w-full max-w-4xl h-[80vh] sm:h-[85vh] relative overflow-hidden shadow-2xl">
 
             {/* Close Button */}
             <button
