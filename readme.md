@@ -148,8 +148,7 @@ REACT_APP_FIREBASE_APP_ID=your_app_id
 
 ## 📽️ Demo
 
-🎥 **Demo Video:** *Coming Soon*
-🌐 **Live Website:** *https://student-helpdesk-f4987.web.app/*
+🌐 **Live Website:** *https://student-helpdesk-f4987.web.app*
 
 ---
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home / Dashboard -->
+  <url>
+    <loc>https://student-helpdesk-f4987.web.app/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Profile Page -->
+  <url>
+    <loc>https://student-helpdesk-f4987.web.app/profile</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Help Desk / Q&A -->
+  <url>
+    <loc>https://student-helpdesk-f4987.web.app/helpdesk</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Connections -->
+  <url>
+    <loc>https://student-helpdesk-f4987.web.app/connections</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Chat -->
+  <url>
+    <loc>https://student-helpdesk-f4987.web.app/chat</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

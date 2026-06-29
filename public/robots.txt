@@ -1,0 +1,13 @@
+# robots.txt for Skill Share
+# https://student-helpdesk-f4987.web.app/
+
+User-agent: *
+Allow: /
+
+# Block internal/private routes from being indexed
+Disallow: /auth
+Disallow: /onboarding
+Disallow: /admin
+
+# Sitemap location — always include this
+Sitemap: https://student-helpdesk-f4987.web.app/sitemap.xml
